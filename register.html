@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HElllo career</title>
+</head>
+<link rel="stylesheet" type="text/css" href="./site.css">
+<body>
+  <div class="login-wrap">
+
+  <div class="login-html">
+    <a href="./home.html"><i class="fa fa-arrow-left icon1" aria-hidden="TRUE" >Back</i></a>
+        <div class="header-lnk">
+        </div>
+        <div class="hr"></div>
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+    <div class="login-form">
+     
+      <form class="sign-in-htm" action="./login.php" method="POST">
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="username" name="username" type="text" class="input" required="required">
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="password" name="password" type="password" class="input" data-type="password">
+          <i class="fas fa-eye"></i>
+        </div>
+        <div class="group">
+          <input id="check" type="checkbox" class="check" checked>
+          <label for="check"><span class="icon"></span> Keep me Signed in</label>
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign In">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <a href="#forgot">Forgot Password?</a><br><br>
+          <label for="tab-2">Create a new User?</a>
+        </div>
+       
+      </form>
+
+      <form class="sign-up-htm" action="./#" method="POST" onSubmit = "return checkPassword(this)" >
+
+        <div class="group">
+          <label for="user" class="label">Username</label>
+          <input id="username" name="username" type="text" class="input" required="requireds">
+        </div>
+        <div class="group">
+          <label for="user" class="label">email</label>
+          <input id="year" name="year" type="mail" class="input" maxlength="24" required="required">
+        </div>
+
+        <div class="group">
+          <label for="pass" class="label">Password</label>
+          <input id="password" name="password" type="password" class="input" data-type="password">
+          
+        </div>
+        <div class="group">
+          <label for="pass" class="label">Confirm Password</label>
+          <input id="pass" name="password2" type="password" class="input" data-type="password">
+          
+        </div>
+        <div class="group">
+          <input type="submit" class="button" value="Sign Up">
+        </div>
+        <div class="hr"></div>
+        <div class="foot-lnk">
+          <label for="tab-1">Already Member?</a>
+        </div>
+      </form>
+    </div>
+    <script>
+      
+  // Function to check Whether both passwords 
+            // is same or not. 
+            function checkPassword(form) { 
+
+                if(form.username.value == "")
+                 {
+                alert("Error: YOUR REGISTRATION SUCCESSFUL!");
+                form.username.focus();
+                return false;
+              }
+              re = /^\w+$/;
+              if(!re.test(form.username.value)) {
+                alert("Error: Username must contain only letters, numbers and underscores!");
+                form.username.focus();
+                return false;
+              }
+               if(form.password.value != "" && form.password.value == form.password2.value) {
+                if(form.password.value.length < 6) {
+                  alert("Error: Password must contain at least six characters!");
+                  form.password.focus();
+                  return false;
+                }
+                if(form.password.value == form.username.value) {
+                  alert("Error: Password must be different from Username!");
+                  form.password.focus();
+                  return false;
+                }
+                re = /[0-9]/;
+                if(!re.test(form.password.value)) {
+                  alert("Error: password must contain at least one number (0-9)!");
+                  form.password.focus();
+                  return false;
+                }
+                re = /[a-z]/;
+                if(!re.test(form.password.value)) {
+                  alert("Error: password must contain at least one lowercase letter (a-z)!");
+                  form.password.focus();
+                  return false;
+                }
+                re = /[A-Z]/;
+                if(!re.test(form.password.value)) {
+                  alert("Error: password must contain at least one uppercase letter (A-Z)!");
+                  form.password.focus();
+                  return false;
+                }
+              } else {
+                alert("Error: Please check that you've entered and confirmed your password!");
+                form.password.focus();
+                return false;
+              }
+
+              alert("welcome!");
+              return true;
+            }
+</script>
+</body>
+</html>
