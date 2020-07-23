@@ -3,5 +3,8 @@
 
 used technlogies..
 
-----1)HTML5 and Inner Javascript
--------2)CSS
+----1)HTML5 
+
+-------Javascript
+
+---------2)CSS
