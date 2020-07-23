@@ -5,6 +5,6 @@ used technlogies..
 
 ----1)HTML5 
 
--------Javascript
+-------2)Javascript
 
----------2)CSS
+---------3)CSS
